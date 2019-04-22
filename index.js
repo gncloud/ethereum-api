@@ -56,10 +56,12 @@ const netStatusCheck = async (status) => {
     if (status === 'healthy') {
         statusTag.innerHTML = '&#9679; 상태정상';
         statusTag.classList.add('text-success')
+        statusTag.classList.remove('text-warning')
         ms = 60000
     } else {
         statusTag.innerHTML = '&#9679; 상태불량';
-        statusTag.classList.add('text-danger')
+        statusTag.classList.add('text-warning')
+        statusTag.classList.remove('text-success')
         ms = 5000
     }
     
