@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Ethererum API Service by gncloud">
+    <meta name="author" content="GNCloud">
+    <title>이더리움 API 서비스 · 지앤클라우드</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://unpkg.com/basscss@8.0.2/css/basscss.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="./cover.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="./request.js"></script>
+
+  </head>
+  <body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <header class="">
+        <div class="eth-logo-icon"></div>
+      </header>
+
+      <main role="main" class="inner cover">
+        <h1 class="my3">
+          <a href="javascript:void(0);" 
+             id="copyUrl" 
+             class="text-decoration-none"
+             data-container="body" 
+             data-toggle="popover" 
+             data-placement="top" 
+             data-content="clipboard copy"
+             >
+            <span class=""><u id="network"></u></span>.gncloud.io/v1
+          </a>
+        </h1>
+        
+        <select id="methods" class="form-control my3"></select>
+        
+        <div class="my3 text-left">
+            <span>JSON Params</span>
+            <textarea id="params" class="form-control" rows="7">[ {
+"from": "0xb60e8dd61c5d32be8058bb8eb970870f07233155",
+"to": "0xd46e8dd67c5d32be8058bb8eb970870f07244567",
+"gas": "0x76c0",
+"gasPrice": "0x9184e72a000"
+}, 
+"latest" ]</textarea>
+        </div>
+
+        <button id="submit" class="btn btn-lg btn-primary w-8em">호출</button>
+      </main>
+
+      <footer class="mastfoot mt-auto">
+        <div class="inner">
+          <p>Provided by <a href="https://www.gncloud.kr/">GNCloud</a> <span class="hearts">&hearts;</span></p>
+        </div>
+      </footer>
+    </div>
+    
+    <div id="resultModal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="result">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">요청결과</h5>
+            </div>
+            <div class="modal-body text-left" id="result">
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+  </body>
+</html>
