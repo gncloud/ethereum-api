@@ -37,13 +37,13 @@
              data-container="body" 
              data-toggle="popover" 
              data-placement="top" 
-             data-content="clipboard copy"
+             data-content="클립보드 복사됨!"
              >
-            <span class=""><u id="network"></u></span>.gncloud.io/v1
+            <span class=""><u id="network">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</u></span>.gncloud.io/v1
           </a>
         </h1>
-        <p class="mb4 lead net-status">
-            &#9679; 상태확인중...
+        <p class="mb4 lead net-status text-muted">
+          &#9679; 상태확인중..
         </p>
         <p class="lead">
           <a href="request" class="btn btn-lg btn-outline-primary">호출실행</a>
@@ -71,6 +71,12 @@
           <div class="modal-body">
             <pre class="text-left">
 networks: {
+  mainnet: {
+    provider: function() {
+      return new HDWalletProvider(mnemonic, "https://mainnet.gncloud.io/v1")
+    },
+    network_id: 1
+  },
   ropsten: {
     provider: function() {
       return new HDWalletProvider(mnemonic, "https://ropsten.gncloud.io/v1")

@@ -1,5 +1,5 @@
 const host = location.host
-const network = host.substring(0, host.indexOf('.')).toLowerCase()
+const network = host.substring(0, host.indexOf('.')).toLowerCase() || "ropsten"
 console.log('connection network: ', network)
 
 window.onload = () => {
@@ -54,14 +54,16 @@ const netStatusCheck = async (status) => {
     let ms = 0
     let statusTag = document.getElementsByClassName('net-status')[0]
     if (status === 'healthy') {
-        statusTag.innerHTML = '&#9679; 상태정상';
+        statusTag.innerHTML = '&#9679; 정상';
         statusTag.classList.add('text-success')
         statusTag.classList.remove('text-warning')
+        statusTag.classList.remove('text-muted')
         ms = 60000
     } else {
-        statusTag.innerHTML = '&#9679; 상태불량';
+        statusTag.innerHTML = '&#9679; 상태점검';
         statusTag.classList.add('text-warning')
         statusTag.classList.remove('text-success')
+        statusTag.classList.remove('text-muted')
         ms = 5000
     }
     

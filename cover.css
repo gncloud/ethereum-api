@@ -1,9 +1,14 @@
 /*
  * Globals
  */
- @media (max-width: 768px) {
+@media (max-width: 500px) {
   .neturl {
-    font-size: 35px;
+    font-size: 30px;
+  }
+}
+@media (min-width: 500px) {
+  .neturl {
+    font-size: 45px;
   }
 }
 @media (min-width: 768px) {
