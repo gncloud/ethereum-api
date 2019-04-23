@@ -8,6 +8,14 @@
 
 
 ## 실행방법
+### 메인넷
+- 시작: $ sudo systemctl start geth
+- 종료: $ sudo systemctl stop geth
+
+### Ropsten
+- 시작: $ sudo systemctl start ropsten-geth
+- 종료: $ sudo systemctl stop ropsten-geth
+
 ### 스크립트 내용
 * 메인넷
 <pre>
@@ -22,15 +30,6 @@ geth --datadir /var/lib/geth/ --syncmode "full" --cache 512 --rpc --rpcvhosts "*
 geth --testnet --datadir /var/lib/geth/ --syncmode "full" --cache 128 --rpc --rpcvhosts "*" --rpcaddr 0.0.0.0 --rpcport 8545 --ws --wsaddr 0.0.0.0 --rpccorsdomain "*" --rpcapi "eth,net,web3,txpool" >>/var/log/geth/output.log 2>&
 </code>
 </pre>
-
-### 메인넷
-- 시작: $ sudo systemctl start geth
-- 종료: $ sudo systemctl stop geth
-
-### Ropsten
-- 시작: $ sudo systemctl start ropsten-geth
-- 종료: $ sudo systemctl stop ropsten-geth
-
 
 # ethereum-api
 
