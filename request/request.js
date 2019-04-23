@@ -40,6 +40,7 @@ const copyPopover = () => {
 }
 
 const rpcCall = async () => {
+    let method = document.getElementById('methods').value
     let pStr = document.getElementById('params').value
     let params = []
     try {
@@ -55,7 +56,7 @@ const rpcCall = async () => {
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
                 'jsonrpc': '2.0',
-                'method': 'web3_clientVersion',
+                'method': method,
                 'params': params,
                 'id': 1
             })
