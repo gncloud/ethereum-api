@@ -71,6 +71,12 @@
           <div class="modal-body">
             <pre class="text-left">
 networks: {
+  mainnet: {
+    provider: function() {
+      return new HDWalletProvider(mnemonic, "https://mainnet.gncloud.io/v1")
+    },
+    network_id: 1
+  },
   ropsten: {
     provider: function() {
       return new HDWalletProvider(mnemonic, "https://ropsten.gncloud.io/v1")
