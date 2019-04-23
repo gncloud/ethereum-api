@@ -17,14 +17,14 @@
 - 종료: $ sudo systemctl stop ropsten-geth
 
 ### 스크립트 내용
-* 메인넷
+#### 메인넷
 <pre>
 <code>
 geth --datadir /var/lib/geth/ --syncmode "full" --cache 512 --rpc --rpcvhosts "*" --rpcaddr 0.0.0.0 --rpcport 8545 --ws --wsaddr 0.0.0.0 --rpccorsdomain "*" --rpcapi "eth,net,web3,txpool" >>/var/log/geth/output.log 2>&
 </code>
 </pre>
 
-* ropsten
+#### ropsten
 <pre>
 <code>
 geth --testnet --datadir /var/lib/geth/ --syncmode "full" --cache 128 --rpc --rpcvhosts "*" --rpcaddr 0.0.0.0 --rpcport 8545 --ws --wsaddr 0.0.0.0 --rpccorsdomain "*" --rpcapi "eth,net,web3,txpool" >>/var/log/geth/output.log 2>&
@@ -35,6 +35,8 @@ geth --testnet --datadir /var/lib/geth/ --syncmode "full" --cache 128 --rpc --rp
 
 ## 구성
 1. index.html, request/index.html 두 페이지로 구성.
-2. json-rpc는 rpc.json파일에 작성됨.
+2. request/index.html의 호출 api는 rpc.json파일에 작성됨.
+3. subdomain을 확인하여 현재 선택된 네트워크를 확인함.
+
 
 
