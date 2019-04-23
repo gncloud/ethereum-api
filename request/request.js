@@ -11,7 +11,7 @@ window.onload = () => {
 }
 
 const getJsonRPC = async () => {
-    const res = await fetch('./rpc.json')
+    const res = await fetch('../rpc.json')
     const jsonRPCList = (await res.json())['json-rpc']
     let methods = document.getElementById('methods')
     jsonRPCList.forEach((rpc, index) => {
