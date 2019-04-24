@@ -10,10 +10,15 @@ ssh -i ~/aws-pem/gncloud-io.pem ubuntu@52.78.148.87 sudo tar zxvf /home/ubuntu/t
 ssh -i ~/aws-pem/gncloud-io.pem ubuntu@52.78.148.87 sudo rm -rf /var/www/html/README.md /var/www/html/deploy.sh
 ssh -i ~/aws-pem/gncloud-io.pem ubuntu@52.78.148.87 sudo ls -al /var/www/html
 ssh -i ~/aws-pem/gncloud-io.pem ubuntu@52.78.148.87 sudo rm /home/ubuntu/tmp.tar.gz
-
+echo "Ropsten 배포 완료."
+sleep 2
 
 rsync --progress tmp.tar.gz ubuntu@15.164.106.150:/home/ubuntu/ -e "ssh -i ~/aws-pem/gncloud-io.pem"
 ssh -i ~/aws-pem/gncloud-io.pem ubuntu@15.164.106.150 sudo tar zxvf tmp.tar.gz -C /var/www/html
 ssh -i ~/aws-pem/gncloud-io.pem ubuntu@15.164.106.150 sudo rm -rf /var/www/html/README.md /var/www/html/deploy.sh
 ssh -i ~/aws-pem/gncloud-io.pem ubuntu@15.164.106.150 sudo ls -al /var/www/html
 ssh -i ~/aws-pem/gncloud-io.pem ubuntu@15.164.106.150 sudo rm /home/ubuntu/tmp.tar.gz
+echo "MainNet 배포 완료."
+
+rm tmp.tar.gz
+echo "완료."
