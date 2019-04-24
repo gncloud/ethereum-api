@@ -42,13 +42,7 @@ const copyPopover = () => {
 const rpcCall = async () => {
     let method = document.getElementById('methods').value
     let pStr = document.getElementById('params').value
-    let params = []
-    try {
-        params = pStr === '' ? [] : JSON.parse(pStr)
-    } catch(e) {
-        alert('JSON 구조가 아닙니다.')
-        return false
-    }
+    let params = pStr === '' ? '[]' : JSON.stringify(pStr).replace(/\\n/g, '')
     try {
         const res = await fetch('/v1', {
             method: 'POST', 
