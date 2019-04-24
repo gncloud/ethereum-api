@@ -33,11 +33,11 @@
 }
 .eth-logo-icon {
   background-image: url('./img/ethereum-ci.png');
-  background-size: 200px ;
+  background-size: 110px ;
   background-repeat: no-repeat;
   background-position: center; 
   width:100%;
-  height:150px;
+  height:100px;
 }
 /* Links */
 a,
