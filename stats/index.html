@@ -1,0 +1,19 @@
+<html>
+<head>
+</head>
+<body style="margin: 0px; padding: 0px;">
+    <div id="stats"></div>
+<script>
+let iframe = document.createElement('iframe')
+let host = location.host
+iframe.src           = 'https://' + host + ':3000/'
+iframe.style.width   = 100 + '%';
+iframe.style.height  = 100 + '%';
+iframe.style.margin  = '0px';
+iframe.style.padding = '0px';
+iframe.style.border  = '0px';
+iframe.style.overflow = 'visible';
+document.getElementById('stats').append(iframe)
+</script>
+</body>
+</html>
