@@ -38,7 +38,7 @@ const truffleModal = () => {
 
 const netStatusCheck = async (status) => {
     try {
-        let res = await fetch('v1', {
+        let res = await fetch(`https://${network}.gncloud.io/v1`, {
             method: 'POST',
             mode: 'cors',
             headers: {'Content-Type': 'application/json'},

@@ -41,10 +41,11 @@ const copyPopover = () => {
 
 const rpcCall = async () => {
     let method = document.getElementById('methods').value
-    let pStr = document.getElementById('params').value
-    let params = pStr === '' ? '[]' : JSON.stringify(pStr).replace(/\\n/g, '')
+    // let pStr = document.getElementById('params').value
+    // let params = pStr === '' ? '[]' : JSON.stringify(pStr).replace(/\\n/g, '')
     try {
-        const res = await fetch('/v1', {
+        let params = JSON.parse(document.getElementById('params').value)
+        const res = await fetch(`https://${network}.gncloud.io/v1`, {
             method: 'POST', 
             mode: 'cors',
             headers: {'Content-Type': 'application/json'},
